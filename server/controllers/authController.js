@@ -60,6 +60,7 @@ export const registerController = async (req, res) => {
   }
 };
 
+//  --------------- 2---------------- localhost:8000/api/v1/auth/login
 export const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
