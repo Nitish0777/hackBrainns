@@ -24,6 +24,15 @@ const userSchema = new mongoose.Schema(
     domain: {
       type: String,
     },
+    University: {
+      type: String,
+    },
+    city: {
+      type: String,
+    },
+    state: {
+      type: String,
+    },
   },
   {
     timestamps: true,
