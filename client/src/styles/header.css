@@ -1,0 +1,127 @@
+body {
+  padding-top: 70px; /* Adjust the value as needed */
+}
+.nav-item {
+  font-size: large;
+}
+.sample {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-light-purple {
+  /* background-color: #c090e6; */
+  border: 1px solid #c090e6;
+  color: white; /* Optionally, set the text color */
+}
+.btn-light-purple:hover {
+  background-color: #c090e6; /* Use the same hover color as btn-success */
+}
+.nav-link:hover {
+  border-bottom: 2px solid #c090e6;
+}
+/* enhancement */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.nav-link {
+  transition: border-bottom-color 0.3s ease;
+}
+.nav-link.active {
+  font-weight: bold;
+}
+.navbar-brand {
+  /* font-style: italic; */
+  font-style: normal;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1;
+  padding: 5px;
+  background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  padding-bottom: 0px;
+}
+.navbar-nav .nav-link {
+  margin-right: 15px;
+}
+/* more enhancements */
+.navbar {
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.navbar-brand {
+  font-family: "Merriweather", sans-serif;
+}
+.btn-light-purple {
+  position: relative;
+  overflow: hidden;
+}
+.navbar-nav .nav-item {
+  margin-right: 50px;
+}
+.logo {
+  display: inline-block;
+  max-width: 80px;
+  height: auto;
+  margin-right: 80px;
+  padding-bottom: 0px;
+}
+.navbar {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(6px);
+}
+@media (max-width: 576px) {
+  /* Adjust the breakpoint as needed */
+  .logo {
+    max-width: 30px; /* Adjust the size for smaller screens */
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjust the breakpoint as needed */
+  .logo {
+    max-width: 50px; /* Adjust the size for medium screens */
+    margin-right: 70px;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Adjust the breakpoint as needed */
+  .logo {
+    max-width: 90px; /* Adjust the size for large screens */
+    margin-right: 40px;
+  }
+}
+.sample2 {
+  margin-left: 50px;
+}
+.btn.btn-outline-success {
+  border-color: #c090e6;
+  color: #c090e6;
+}
+
+.btn.btn-outline-success:hover {
+  background-color: #c090e6;
+  color: white;
+}
+.sample2 input,
+.sample2 button {
+  border-radius: 20px;
+}
+.sample2 input {
+  border: 2px solid #c090e6;
+}
+.pro {
+  text-decoration: none;
+  color: #000;
+}
