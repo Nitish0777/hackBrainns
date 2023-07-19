@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../styles/header.css";
 import "../../styles/login.css";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import { Modal } from "bootstrap";
 
@@ -10,7 +10,7 @@ const Header = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [auth, setAuth] = useAuth();
-  const navigate = useNavigate();
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,15 +27,21 @@ const Header = () => {
         const { user, token } = res.data;
         setAuth({ user, token });
         localStorage.setItem("auth", JSON.stringify({ user, token }));
-        const loginModal = document.getElementById("loginModal");
-        const modal = new Modal(loginModal);
-        modal.hide();
+        setIsModalVisible(false);
       } else {
         console.log(res.data.message);
       }
     } catch (error) {
       console.log("Login Error", error);
     }
+  };
+
+  const openModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
   };
 
   return (
@@ -87,8 +93,9 @@ const Header = () => {
           <div className="mx-2">
             <button
               className="btn btn-light-purple"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
+              // data-bs-toggle="modal"
+              // data-bs-target="#loginModal"
+              onClick={openModal}
             >
               Log In
             </button>
@@ -100,11 +107,14 @@ const Header = () => {
       </nav>
       {/* login Modal */}
       <div
-        className="modal fade"
+        // className="modal fade"
+        className={`modal fade ${isModalVisible ? "show" : ""}`}
         id="loginModal"
         tabIndex={-1}
         aria-labelledby="loginModalLabel"
-        aria-hidden="true"
+        // aria-hidden="true"
+        aria-hidden={!isModalVisible}
+        style={{ display: isModalVisible ? "block" : "none" }}
       >
         <div className="modal-dialog">
           <div className="modal-content">
