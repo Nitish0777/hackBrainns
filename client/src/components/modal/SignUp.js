@@ -1,9 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link from React Router if you are using it
+import axios from "axios"; // Import axios
+import { toast } from "react-toastify";
 
 const SignUp = ({ isSignupModalVisible, closeSignupModal }) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleSigUpSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(
+        `${process.env.REACT_APP_API}/api/v1/auth/register`,
+        {
+          name,
+          email,
+          password,
+          confirmPassword,
+        }
+      );
+      console.log(res);
+      if (res.data.success) {
+        toast.dark("Sign Up Successfully");
+        closeSignupModal();
+      } else {
+        console.log(res.data.message);
+        toast.error(res.data.message);
+      }
+    } catch (error) {
+      console.log("Sign Up Error", error);
+      toast.error("Sign Up Error");
+    }
+  };
+
   return (
-    /* signup modal */
     <div>
       <div
         className={`modal fade ${isSignupModalVisible ? "show" : ""}`}
@@ -30,25 +62,45 @@ const SignUp = ({ isSignupModalVisible, closeSignupModal }) => {
             <div className="main">
               <div className="login-box">
                 <h2>Sign Up</h2>
-                <form>
+                <form onSubmit={handleSigUpSubmit}>
                   <div className="user-box">
                     <i className="fa fa-user sym" />
-                    <input type="text" name="name" required />
+                    <input
+                      type="text"
+                      required
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
                     <label>Name</label>
                   </div>
                   <div className="user-box">
                     <i className="fa fa-user sym" />
-                    <input type="email" name="email" required />
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                     <label>Email</label>
                   </div>
                   <div className="user-box">
                     <i className="fa fa-key sym" />
-                    <input type="password" name="password" required />
+                    <input
+                      type="password"
+                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
                     <label>Set Password</label>
                   </div>
                   <div className="user-box">
                     <i className="fa fa-key sym" />
-                    <input type="password" name="confirmPassword" required />
+                    <input
+                      type="password"
+                      required
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                    />
                     <label>Confirm Password</label>
                   </div>
                   <button type="submit">

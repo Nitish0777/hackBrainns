@@ -21,12 +21,7 @@ const SignIn = ({ isModalVisible, closeModal, openSignupModal }) => {
       );
       console.log(res);
       if (res.data.success) {
-        toast.dark("Login Successfully", {
-          position: "top-center",
-          autoClose: 4000,
-          pauseOnHover: true,
-          draggable: true,
-        });
+        toast.dark("Login Successfully");
 
         const { user, token } = res.data;
         setAuth({ user, token });

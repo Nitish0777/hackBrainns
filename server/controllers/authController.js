@@ -17,11 +17,6 @@ export const registerController = async (req, res) => {
         success: false,
         message: "Email is required",
       });
-    if (password !== confirm_password)
-      return res.status(400).send({
-        success: false,
-        message: "Password do not match",
-      });
     if (!password || password.length < 6)
       return res.status(400).send({
         success: false,
