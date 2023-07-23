@@ -11,6 +11,17 @@ import SignUp from "../modal/SignUp";
 const Header = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isSignupModalVisible, setIsSignupModalVisible] = useState(false);
+  const [auth, setAuth] = useAuth();
+
+  const logout = () => {
+    setAuth({
+      ...auth,
+      token: "",
+      user: null,
+    });
+    localStorage.removeItem("auth");
+    toast.dark("Logged out successfully!");
+  };
 
   const openSignupModal = () => {
     setIsSignupModalVisible(true);
@@ -76,14 +87,28 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className="mx-2">
-            <button className="btn btn-light-purple" onClick={openModal}>
-              Log In
-            </button>
-            <Link to="profile.html" className="pro">
-              <button className="btn btn-light-purple profile">Profile</button>
-            </Link>
-          </div>
+          {!auth?.user ? (
+            <>
+              <div className="mx-2">
+                <button className="btn btn-light-purple" onClick={openModal}>
+                  Log In
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="mx-2">
+                <Link to="profile.html" className="pro">
+                  <button className="btn btn-light-purple profile">
+                    {auth?.user?.name}
+                  </button>
+                </Link>
+                <button className="btn btn-light-purple" onClick={logout}>
+                  Log Out
+                </button>
+              </div>
+            </>
+          )}
         </div>
       </nav>
       {/* Login Modal */}
