@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../styles/header.css";
 import "../../styles/login.css";
 import axios from "axios";
@@ -12,6 +12,7 @@ const Header = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isSignupModalVisible, setIsSignupModalVisible] = useState(false);
   const [auth, setAuth] = useAuth();
+  const navigate = useNavigate();
 
   const logout = () => {
     setAuth({
