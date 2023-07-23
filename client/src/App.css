@@ -30,7 +30,7 @@ body {
   width: 717px;
   height: 691px;
   position: absolute;
-  left: -0px;
+  left: 0px;
   bottom: -2150px;
   pointer-events: none;
 }
@@ -42,7 +42,7 @@ body {
   width: 717px;
   height: 691px;
   position: absolute;
-  right: -0px;
+  right: 0px;
   bottom: -1432px;
   pointer-events: none;
 }
@@ -54,7 +54,7 @@ body {
   width: 717px;
   height: 691px;
   position: absolute;
-  left: -0px;
+  left: 0px;
   bottom: -1050px;
   pointer-events: none;
 }
@@ -66,7 +66,24 @@ body {
   width: 717px;
   height: 691px;
   position: absolute;
-  right: -0px;
+  right: 0px;
   bottom: -150px;
+  pointer-events: none;
+}
+.try1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-6 {
+  border-radius: 5px;
+  background: #c090e6;
+  opacity: 0.5;
+  filter: blur(200px);
+  width: 717px;
+  height: 691px;
+  position: absolute;
+  right: 0px;
+  bottom: -3350px;
   pointer-events: none;
 }

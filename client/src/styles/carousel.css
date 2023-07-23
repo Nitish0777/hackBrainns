@@ -1,0 +1,65 @@
+.carousel .carousel-item {
+  height: 500px;
+}
+
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  opacity: 0.5;
+}
+.carousel-item button {
+  position: relative;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  border-radius: 20px;
+}
+/* Other CSS styles... */
+
+.carousel-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+.btext {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+@media (max-width: 576px) {
+  /* Adjust the breakpoint as needed */
+  .carousel-content {
+    font-size: smaller; /* Adjust the font size for smaller screens */
+  }
+  .carousel-item button {
+    font-size: smaller;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjust the breakpoint as needed */
+  .carousel-content {
+    font-size: smaller; /* Adjust the font size for medium screens */
+  }
+  .carousel-item button {
+    font-size: smaller;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Adjust the breakpoint as needed */
+  .carousel-content {
+    font-size: small; /* Adjust the font size for large screens */
+  }
+  .carousel-item button {
+    font-size: small;
+  }
+}
