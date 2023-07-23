@@ -15,7 +15,6 @@ const Contact = () => {
                 id="name"
                 placeholder="NAME"
                 name="name"
-                defaultValue
                 required
               />
             </div>

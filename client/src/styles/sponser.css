@@ -1,0 +1,40 @@
+.sponsors {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.sponsors h2 {
+  font-size: 40px;
+  font-weight: 900px;
+  margin-bottom: 100px;
+  color: #f0f0f0;
+}
+
+.sponsor-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sponsor {
+  margin: 0 20px;
+}
+
+.sponsor img {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
+  filter: drop-shadow(2px 5px 2px white);
+  /* filter: brightness(2); */
+}
+.sponsors {
+  border-top: 0.2px solid #c689f9;
+}
+.sponsor a img:hover {
+  filter: brightness(7);
+  filter: drop-shadow(6px 6px 2px white);
+}
+.sponsor p {
+  color: aliceblue;
+}

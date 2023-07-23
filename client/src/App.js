@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
+import Faq from "./components/Faq/Faq";
+import Sponser from "./components/Sponser/Sponser";
 function App() {
   return (
     <div>
@@ -16,7 +18,9 @@ function App() {
       <Home />
       <About />
       <Contact />
-      {/* <Footer /> */}
+      <Faq />
+      <Sponser />
+      <Footer />
       <Routes>
         <Route path="/profile" element={<Header />} />
       </Routes>
