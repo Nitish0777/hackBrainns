@@ -1,6 +1,7 @@
 import User from "../models/userModel.js";
 import { comparePassword, hashPassword } from "../helper/authHelper.js";
 import jwt from "jsonwebtoken";
+import randomstring from "randomstring";
 
 // register controller --------------- 1---------------- localhost:8000/api/v1/auth/register
 export const registerController = async (req, res) => {
@@ -136,6 +137,32 @@ export const updateController = async (req, res) => {
     return res.status(500).send({
       success: false,
       message: "Something went wrong in updating user",
+    });
+  }
+};
+
+// forget password controller --------------- 4---------------- localhost:8000/api/v1/auth/forget
+export const forgetVerifyController = async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email)
+      return res.status(400).send({
+        success: false,
+        message: "Email is required",
+      });
+    const user = await User.findOne({ email });
+    if (!user)
+      return res.status(400).send({
+        success: false,
+        message: "Mail is Incorrect",
+      });
+
+    const randomString = randomstring.generate();
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: "Something went wrong in forget password",
     });
   }
 };

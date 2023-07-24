@@ -33,6 +33,10 @@ const userSchema = new mongoose.Schema(
     state: {
       type: String,
     },
+    token: {
+      type: String,
+      default: "",
+    },
   },
   {
     timestamps: true,
