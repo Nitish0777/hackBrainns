@@ -15,23 +15,37 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    image: {
+      type: String,
+      default: "",
+    },
     phone: {
       type: String,
+      default: "",
     },
     gender: {
       type: String,
+      default: "",
     },
     domain: {
       type: String,
+      default: "",
     },
     University: {
       type: String,
+      default: "",
     },
     city: {
       type: String,
+      default: "",
     },
     state: {
       type: String,
+      default: "",
+    },
+    is_verified: {
+      type: Number,
+      default: 0,
     },
     token: {
       type: String,

@@ -5,6 +5,7 @@ import cors from "cors";
 import colors from "colors";
 import morgan from "morgan";
 import authRoutes from "./routes/authRoute.js";
+import multer from "multer";
 
 // config dotenv
 dotenv.config();
